@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68.0.0", "wheel>=0.40.0", "setuptools_scm[toml]>=7.1.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openbee-cli"
+dynamic = ["version"]
+authors = [
+    {name="Veronique Demers", email="vdemers@ibm.com"}
+]
+description = "CLI for openbee"
+readme = "README.md"
+dependencies = [
+    "click",
+    "open-webui==0.6.0"
+]
+requires-python = ">=3.11,<3.12"
+
+[options]
+package_dir=[
+  "src"
+]
+
+[options.packages.find]
+where=["src/cli"]
+
+[tool.setuptools_scm]
+write_to = "src/cli/_version.py"
+local_scheme = "no-local-version"
+
+[project.scripts]
+obee = "cli.cli:obee"
