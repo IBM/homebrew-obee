@@ -16,6 +16,6 @@ class Obee < Formula
   
     test do
       # this is a simple test that checks if the script is working as expected
-      system "#{bin}/obee", "load"
+      system "#{bin}/obee", "run"
     end
   end
