@@ -5,8 +5,8 @@
 class Obee < Formula
     desc "A tiny shell script that is installable via homebrew. Start ollama and open-webui TBD"
     homepage "https://github.com/vedem1192/homebrew-obee"
-    url "https://github.com/vedem1192/homebrew-obee/archive/refs/tags/v0.0.6.tar.gz"
-    sha256 "c870e6626cb4b838c4e70da98965daa937e651271553bc63e188b260957e23c4"
+    url "https://github.com/vedem1192/homebrew-obee/archive/refs/tags/v0.0.1-alpha.tar.gz"
+    sha256 "e61ae9d9bda45cd72b2d95f321eaa7c908a714c2125249cb3d8772793c123a69"
     license ""
   
     def install
@@ -16,6 +16,6 @@ class Obee < Formula
   
     test do
       # this is a simple test that checks if the script is working as expected
-      system "#{bin}/obee", "run"
+      system "#{bin}/obee", "start"
     end
   end
