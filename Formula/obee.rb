@@ -5,8 +5,8 @@
 class Obee < Formula
     desc "A tiny shell script that is installable via homebrew. Start ollama and open-webui TBD"
     homepage "https://github.com/vedem1192/homebrew-obee"
-    url "https://github.com/vedem1192/homebrew-obee/archive/refs/tags/v0.0.1-alpha.tar.gz"
-    sha256 "e61ae9d9bda45cd72b2d95f321eaa7c908a714c2125249cb3d8772793c123a69"
+    url "https://github.com/vedem1192/homebrew-obee/archive/refs/tags/v0.0.1-alpha-0.tar.gz"
+    sha256 "0c87370f2dba538a35c595f043247252081200b210936a32f0cde0bfd6eea58f"
     license ""
   
     def install
