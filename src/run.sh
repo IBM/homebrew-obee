@@ -13,13 +13,14 @@ sed -i '' -e 's|<OLLAMA_BIN>|'"$OLLAMA_BIN"'|g' ~/Library/LaunchAgents/com.grani
 sed -i '' -e 's|<UV_BIN>|'"$UV_BIN"'|g' ~/Library/LaunchAgents/com.granite.obee.plist
 
 
-# $1 == load or unload
-
 LAUNCH_CMD=""
+USER_INPUT=$1
 
-if [ $1 == "run" ]; then
+echo "User input $USER_INPUT"
+
+if [ $USER_INPUT == "run" ]; then
     LAUNCH_CMD="load"
-elif [ $1 == "stop" ]; then
+elif [ $USER_INPUT == "stop" ]; then
     LAUNCH_CMD="unload"
 fi
 
