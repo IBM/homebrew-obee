@@ -13,12 +13,10 @@ sed -i '' -e 's|<OLLAMA_BIN>|'"$OLLAMA_BIN"'|g' ~/Library/LaunchAgents/com.grani
 sed -i '' -e 's|<UV_BIN>|'"$UV_BIN"'|g' ~/Library/LaunchAgents/com.granite.obee.plist
 
 
-if [ $1 == "run"]
+if [ $1 == "run" ]
 then
-    launchctl load ~/Library/LaunchAgents/com.granite.ollama.plist |
-fi
-
-if [ $1 == "stop"]
+    launchctl load ~/Library/LaunchAgents/com.granite.ollama.plist
+elif [ $1 == "stop" ]
 then
     launchctl unload ~/Library/LaunchAgents/com.granite.obee.plist
 fi
