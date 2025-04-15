@@ -13,12 +13,17 @@ sed -i '' -e 's|<OLLAMA_BIN>|'"$OLLAMA_BIN"'|g' ~/Library/LaunchAgents/com.grani
 sed -i '' -e 's|<UV_BIN>|'"$UV_BIN"'|g' ~/Library/LaunchAgents/com.granite.obee.plist
 
 
-if [ $1 == "run" ]
-then
-    launchctl load ~/Library/LaunchAgents/com.granite.ollama.plist
-elif [ $1 == "stop" ]
-then
-    launchctl unload ~/Library/LaunchAgents/com.granite.obee.plist
+# $1 == load or unload
+
+LAUNCH_CMD=""
+
+if [ $1 == "run" ]; then
+    LAUNCH_CMD="load"
+elif [ $1 == "stop" ]; then
+    LAUNCH_CMD="unload"
 fi
 
-echo "Ollama and Open Webui $1"
+launchctl $LAUNCH_CMD ~/Library/LaunchAgents/com.granite.ollama.plist
+launchctl $LAUNCH_CMD ~/Library/LaunchAgents/com.granite.obee.plist
+
+echo "Ollama and Open Webui $LAUNCH_CMD"
