@@ -13,10 +13,10 @@ elif [[ $1 == "--help" ]] || [ -z "$1" ] ; then
     echo """
 
 Commands:
-    start       Starts Ollama and Open Webui 
+    start       Starts Ollama and Open Webui
     stop        Stops Ollama and Open Webui
     update      Updates Obee to the latest version -- WIP
-    
+
 Usage:
     obee [command]
 
@@ -24,8 +24,8 @@ Usage:
     exit 1
 fi
 
-launchctl $LAUNCH_CMD ~/Library/LaunchAgents/com.granite.ollama.plist
-launchctl $LAUNCH_CMD ~/Library/LaunchAgents/com.granite.obee.plist
+launchctl $LAUNCH_CMD $HOME/Library/LaunchAgents/com.granite.ollama.plist
+launchctl $LAUNCH_CMD $HOME/Library/LaunchAgents/com.granite.obee.plist
 echo "Ollama and Open Webui $LAUNCH_CMD"
 
 
