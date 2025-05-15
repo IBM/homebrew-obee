@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 LAUNCH_CMD=""
+OPEN_WEBUI_SCRIPT=${OPEN_WEBUI_SCRIPT:-"https://raw.githubusercontent.com/IBM/lm-desk/refs/heads/main/scripts/openwebui.py"}
 
 if [[ $1 == "start" ]]; then
     LAUNCH_CMD="load"
@@ -8,7 +9,7 @@ elif [[ $1 == "stop" ]]; then
     LAUNCH_CMD="unload"
 elif [[ $1 == "update" ]]; then
     echo "Updating Open WebUI ..."
-    launchctl start $HOME/Library/LaunchAgents/com.granite.obee.update.plist
+    uv run -P open-webui $OPEN_WEBUI_SCRIPT --update
     exit 0
 elif [[ $1 == "--help" ]] || [ -z "$1" ] ; then
     echo """
@@ -16,7 +17,7 @@ elif [[ $1 == "--help" ]] || [ -z "$1" ] ; then
 Commands:
     start       Starts Ollama and Open Webui
     stop        Stops Ollama and Open Webui
-    update      Updates Obee to the latest version -- WIP
+    update      Updates Obee to the latest version
 
 Usage:
     obee [command]
