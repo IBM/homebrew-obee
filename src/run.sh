@@ -7,8 +7,9 @@ if [[ $1 == "start" ]]; then
 elif [[ $1 == "stop" ]]; then
     LAUNCH_CMD="unload"
 elif [[ $1 == "update" ]]; then
-    echo "Coming soon ..."
-    exit 1
+    echo "Updating Open WebUI ..."
+    launchctl start $HOME/Library/LaunchAgents/com.granite.obee.update.plist
+    exit 0
 elif [[ $1 == "--help" ]] || [ -z "$1" ] ; then
     echo """
 
@@ -27,5 +28,3 @@ fi
 launchctl $LAUNCH_CMD $HOME/Library/LaunchAgents/com.granite.ollama.plist
 launchctl $LAUNCH_CMD $HOME/Library/LaunchAgents/com.granite.obee.plist
 echo "Ollama and Open Webui $LAUNCH_CMD"
-
-
